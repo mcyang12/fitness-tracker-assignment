@@ -24,12 +24,17 @@ const fitnessTracker = [
 
 //Task 3: Workout Exercise Class
     class WorkoutExercise{
-        constructor (name, workoutType){
-            this.name = name;
+        constructor (workoutName, workoutType){
+            this.workoutNamename = workoutName;
             this.workoutType = workoutType;
         }
         displayInfo(){
-            return `Workout Name: ${this.name} | Workout Type: ${this.workoutType}`;
-            
+            return `Workout Name: ${this.workme} | Workout Type: ${this.workoutType}`;
+
         }
+    }
+
+//Task 4: Additional New Workout Class
+    class AdditionalNewWorkout extends WorkoutExercise{
+        constructor (workoutNameame, workoutType, )
     }
