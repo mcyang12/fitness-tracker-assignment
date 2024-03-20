@@ -1,4 +1,4 @@
-const summary = [];
+const exerciseLogs = [];
 const fitnessTracker = [
     {name: "Interval Training", time: 40 },
     {name: "Squats", time: 20 },
@@ -44,3 +44,7 @@ const fitnessTracker = [
             return `${super.displayInfo}, Workout Repetition: ${this.workoutRepetition}`;
         }
     }
+//Added repetitions as an additional extension hoping it will coordinate with the code with my task
+
+//Task 5: Workout Class Constructor
+    function WorkoutClass()
