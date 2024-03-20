@@ -20,12 +20,15 @@
         </div>
     <div class="task">
         <h3>Daily Workout Summary:</h3>
-            <select id="">
-                <option value=""></option>
-                <option value=""></option>
-            </select>
+                <select id="daily-workout-tracker">
+                    <option value="Monday"></option>
+                    <option value="Tuesday"></option>
+                    <option value="Wednesday"></option>
+                    <option value="Thursday"></option>
+                    <option value="Friday"></option>
+                </select>
     </div>   
-        <h3>New Workouts Classes:</h3>
+        <h3>New Workout Logs:</h3>
             <div>
                 <label for="exercise-type">Exercise Type:</label>
                 <input type="text" id="exercise-type">
@@ -38,12 +41,24 @@
                 <input type="text" id="exercise-duration">
             </div>
             </div>
-                <button type="submit">Add Workout</button>
+                <button id="submit">Add New Workout</button>
+        <section id="workout-log">
         <h3>Past Workout Logs:</h3>
-
- 
+            <div>
+                <label for="exercise-name">Exercise Name:</label>
+                <input type="text" id="exercise-name">
+            </div>
+            <div>
+                <label for="sets">Sets:</label>
+                <input type="number" id="sets">
+            </div>
+            <div>
+                <label for="reps">Reps:</label>
+                <input type="number" id="reps">
+            </div>
+                <button id="submit">Log Past Workout</button>
+    </section>
     </div>
+    <script src="scripts/scripts.js"></script>
 </body>
-
-
 </html>
