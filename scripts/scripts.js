@@ -8,43 +8,36 @@ const fitnessTracker = [
     ];
     const fitnessTimes = [20, 30, 50];
 
-    //Estimated Fitness times for Task 1
-
-//Task 1: Calculate Total Fitness Times
-    function calculateTotalTimes(time){
-        return time.reduce((total, time) => total + time, 0);
-    };
-    //returning the times less or greater than the listed times above
-
-//Task 2: Filter Old Workout Class
-    function filterOldClasses(workouts){
-        return filterOldClasses.filter(workoutClass => workoutClass.time > 0);
+//Task 1: Function to calculate Total Workouts Completed
+    function calculateTotalWorkouts(){
+        return exerciseLogs.length;
     }
-    //filtering out old workout classes to incorporate new workout classes
 
-//Task 3: Workout Exercise Class
-    class WorkoutExercise{
-        constructor (workoutName, workoutType){
-            this.workoutNamename = workoutName;
-            this.workoutType = workoutType;
-        }
-        displayInfo(){
-            return `Workout Name: ${this.workoutName} | Workout Type: ${this.workoutType}`;
+//Task 2: Function to calculate total duration of workouts
+    function calculateTotalDuration(){
+        let totalDuration = 0;
+        exerciseLogs.forEach(log => {
+            totalDuration += log.duration;
+        });
+    }
 
+//Task 3: Class representing a workout
+    class Workout {
+        constructor(type, name, duration){
+            this.type = type;
+            this.name = name;
+            this.duration = duration;
         }
     }
 
-//Task 4: Additional New Workout Class
-    class AdditionalNewWorkout extends WorkoutExercise{
-        constructor (workoutName, workoutType, workoutRepetition){
-            super (workoutName, workoutType);
-            this.workoutRepetition = workoutRepetition;
-        }
-        displayInfo(){
-            return `${super.displayInfo}, Workout Repetition: ${this.workoutRepetition}`;
-        }
+//Task 4: Display a Summary of the Workout Session
+    displayInfo(){
+        return `Type: ${this.type}, Name: ${this.name}, Duration: ${this.duration} minutes`;
     }
-//Added repetitions as an additional extension hoping it will coordinate with the code with my task
 
-//Task 5: Workout Class Constructor
-    function WorkoutClass()
+//Task 5: Function add A New Workout
+    function addNewWorkout(){
+        const exerciseType = document.getElementById('exercise-type').value;
+        const exerciseName = document.getElementById('exercise-name').value;
+        const duration = document.getElementById('duration').value;
+    }
