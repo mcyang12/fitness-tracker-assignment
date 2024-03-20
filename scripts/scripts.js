@@ -8,14 +8,28 @@ const fitnessTracker = [
     ];
     const fitnessTimes = [20, 30, 50];
 
-    //Estimated times for Task 1
+    //Estimated Fitness times for Task 1
 
 //Task 1: Calculate Total Fitness Times
     function calculateTotalTimes(time){
         return time.reduce((total, time) => total + time, 0);
     };
+    //returning the times less or greater than the listed times above
 
-//Task 2: Filter New Workout Class
-    function filterNewClasses(workouts){
-        return 
+//Task 2: Filter Old Workout Class
+    function filterOldClasses(workouts){
+        return filterOldClasses.filter(workoutClass => workoutClass.time > 0);
+    }
+    //filtering out old workout classes to incorporate new workout classes
+
+//Task 3: Workout Exercise Class
+    class WorkoutExercise{
+        constructor (name, workoutType){
+            this.name = name;
+            this.workoutType = workoutType;
+        }
+        displayInfo(){
+            return `Workout Name: ${this.name} | Workout Type: ${this.workoutType}`;
+            
+        }
     }
