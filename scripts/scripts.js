@@ -29,12 +29,18 @@ const fitnessTracker = [
             this.workoutType = workoutType;
         }
         displayInfo(){
-            return `Workout Name: ${this.workme} | Workout Type: ${this.workoutType}`;
+            return `Workout Name: ${this.workoutName} | Workout Type: ${this.workoutType}`;
 
         }
     }
 
 //Task 4: Additional New Workout Class
     class AdditionalNewWorkout extends WorkoutExercise{
-        constructor (workoutNameame, workoutType, )
+        constructor (workoutName, workoutType, workoutRepetition){
+            super (workoutName, workoutType);
+            this.workoutRepetition = workoutRepetition;
+        }
+        displayInfo(){
+            return `${super.displayInfo}, Workout Repetition: ${this.workoutRepetition}`;
+        }
     }
