@@ -28,12 +28,11 @@ const fitnessTracker = [
             this.name = name;
             this.duration = duration;
         }
+        displayInfo(){
+            return `Type: ${this.type}, Name: ${this.name}, Duration: ${this.duration} minutes`;
+        }
     }
 
-//Task 4: Display a Summary of the Workout Session
-    displayInfo(){
-        return `Type: ${this.type}, Name: ${this.name}, Duration: ${this.duration} minutes`;
-    }
 
 //Task 5: Function add A New Workout
     function addNewWorkout(){
