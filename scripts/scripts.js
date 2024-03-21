@@ -1,19 +1,31 @@
-const exerciseLogs = [];
-const fitnessTracker = [
-    {name: "Interval Training", time: 40 },
-    {name: "Squats", time: 20 },
-    {name: "Bent-Over-Row", time: 15 },
-    {name: "Upright Row", time: 15 },
+document.addEventListener('DOMContentLoaded', function () {
 
-    ];
-    const fitnessTimes = [20, 30, 50];
+    const exerciseLogs = [];
+// const fitnessTracker = [
+        //     {name: "Interval Training", time: 40 },
+        //     {name: "Squats", time: 20 },
+        //     {name: "Bent-Over-Row", time: 15 },
+        //     {name: "Upright Row", time: 15 },
+        
+        //     ];
+        //     const fitnessTimes = [20, 30, 50];
+        
 
-//Task 1: Function to calculate Total Workouts Completed
+// Class representing a workout entry
+    class WorkoutEntry {
+        constructor(type, name, duration){
+            this.type = type;
+            this.name = name;
+            this.duration = duration;
+        }
+    }
+
+// Function to calculate Total Workouts Completed
     function calculateTotalWorkouts(){
         return exerciseLogs.length;
     }
 
-//Task 2: Function to calculate total duration of workouts
+// Function to calculate total duration of workouts
     function calculateTotalDuration(){
         let totalDuration = 0;
         exerciseLogs.forEach(log => {
@@ -21,22 +33,49 @@ const fitnessTracker = [
         });
     }
 
-//Task 3: Class representing a workout
-    class Workout {
-        constructor(type, name, duration){
-            this.type = type;
-            this.name = name;
-            this.duration = duration;
-        }
-        displayInfo(){
-            return `Type: ${this.type}, Name: ${this.name}, Duration: ${this.duration} minutes`;
-        }
-    }
-
-
-//Task 5: Function add A New Workout
+// Function adding a new workout
     function addNewWorkout(){
         const exerciseType = document.getElementById('exercise-type').value;
         const exerciseName = document.getElementById('exercise-name').value;
-        const duration = document.getElementById('duration').value;
+        const exerciseDuration = document.getElementById('exercise-duration').value;
+        
+// Create a new workout entry
+        const newWorkout = new WorkoutEntry(exerciseType, exerciseName, exerciseDuration);
+
+// Append the new workout entry to workout log
+        const workoutLog = document.getElementById('workout-log');
+        const workoutEntryDiv = document.createElement('div');
+        workoutEntryDiv.textContent = `Type: ${newWorkout.type}, Name: ${newWorkout.name}, Duration: ${newWorkout.duration} minutes`;
+        workoutLog.appendChild(workoutEntryDiv);
+
+        document.getElementById('exercise-type').value = '';
+        document.getElementById('exercise-name').value = '';
+        document.getElementById('exercise-duration').value = '';
     }
+
+// Function to log past workout
+    function logPastWorkout(){
+        const exerciseName = document.getElementById('past-exercise-name').value;
+        const sets = document.getElementById('sets').value;
+        const reps = document.getElementById('reps').value;
+
+// Create a new past workout entry
+        const pastWorkoutEntry = {
+            name: exerciseName,
+            sets: sets,
+            reps: reps
+        };
+
+// Append past workout log
+        const workoutLog = document.getElementById('workout-log');
+        const pastWorkoutEntryDiv = document.createElement('div');
+        pastWorkoutEntryDiv.textContent = `Exercise: ${pastWorkoutEntry.name}, Sets: ${pastWorkoutEntry.sets}, Reps: ${pastWorkoutEntry.reps}`;
+        workoutLog.appendChild(pastWorkoutEntryDiv);
+        
+        document.getElementById('past-exercise-name').value = '';
+        document.getElementById('sets').value = '';
+        document.getElementById('reps').value = '';
+    }
+
+});
+
